@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<section class="articles">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>NOM</th>
+                <th>PRENOM</th>               
+                <th>DATE_NAISSANCE</th>
+                <th>MAIL</th>            
+            </tr>
+        </thead>
+        {% for employe in employes %}
+        <tr>
+                    <td>{{ employe.nom }}</td>
+
+            <td>{{employe.prenom | raw}}</td>
+             <td>{{employe.hbd | date()}}</td>
+              <td>{{employe.email}}</td> 
+          
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

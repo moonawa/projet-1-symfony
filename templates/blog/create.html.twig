@@ -1,0 +1,30 @@
+{% extends 'base.html.twig'   %}
+{% form_theme formEmploye 'bootstrap_4_layout.html.twig' %}
+
+
+{% block body %}
+
+    <h1>Ajouter un employe</h1>
+{{ form_start(formEmploye)}}
+
+    {{ form_row(formEmploye.nom, {'attr': {'placeholder': "sene"}} ) }}
+    {{ form_row(formEmploye.prenom, {'attr': {'placeholder': "awa"}}) }}
+    {{ form_row(formEmploye.hbd) }}
+    {{ form_row(formEmploye.email, {'attr': {'placeholder': "sene@gmail.com"}}) }}
+
+    <button type="submit" class="btn btn-success" >
+    {% if editMode  %}
+     Modifier  
+    {% else %}
+    Ajouter
+    {% endif %}
+    </button>
+    {{form_end(formEmploye)}}
+
+
+    
+
+
+
+
+{% endblock %} 

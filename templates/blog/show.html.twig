@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+            <h2>{{ employe.nom }}</h2>
+            <div class="metadata">{{employe.prenom | raw}}</div>
+            <div class="content">
+                <img src="http://placehold.it/350x150" alt="yes">
+                née le {{employe.hbd | date()}}
+                {{employe.email}}
+                {{ employe.service.libelle }}
+           </div>
+       
+{% endblock %}
